@@ -79,12 +79,12 @@
 
             function UpdateData(){
                 var dropdown = document.getElementById("trick");
-                if(dropdown == "trick1"){
+                if(dropdown.text == "trick1"){
                     update(ref(db, "test/"),{
                     int: 1
                 });
                 }
-                else if(dropdown == "trick2"){
+                else if(dropdown.text == "trick2"){
                     update(ref(db, "test/"),{
                     int: 2
                 });
