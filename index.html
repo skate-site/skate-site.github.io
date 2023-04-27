@@ -33,17 +33,17 @@
             <h2>Trick Selection</h2>
 
             <label for="trick_selection">Choose a Trick:</label>
-            <select name="trick" id="trick">
-                <option value="trick1" selected>Trick1</option>
-                <option value="trick2">Trick2</option>
-                <option value="trick3">Trick3</option>
+            <select id="trick_options">
+                <option value="1" selected>Trick1</option>
+                <option value="2">Trick2</option>
+                <option value="3">Trick3</option>
             </select>
             <input id="testVal" type="text">
             <br>
             <br>
             <button id="update">UPDATE</button>
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             
         <script type="module">
             // Import the functions you need from the SDKs you need
@@ -78,19 +78,19 @@
             var updateBtm = document.querySelector("#update");
 
             function UpdateData(){
-                var dropdown = document.getElementById("trick");
-                if(dropdown.text == "trick1"){
-                    update(ref(db, "preset/"),{
+                var dropdown = document.getElementById("trick_options");
+                if(dropdown.value == 1){
+                    update(ref(db, "test/"),{
                     int: 1
                 });
                 }
-                else if(dropdown.text == "trick2"){
-                    update(ref(db, "preset/"),{
+                else if(dropdown.value == 2){
+                    update(ref(db, "test/"),{
                     int: 2
                 });
                 }
                 else{
-                    update(ref(db, "preset/"),{
+                    update(ref(db, "test/"),{
                     int: 3
                 });
                 }
