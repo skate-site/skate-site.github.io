@@ -46,6 +46,16 @@
   top: 50%;
   right: 0;
 }
+.grid-container {
+  display: grid;
+  grid-template-columns:auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
 
   body{
 
@@ -68,7 +78,6 @@
   }
   
  button {
-    position: absolute;
     top:50%;
     background-color: black;
     color: #fff;
@@ -98,21 +107,26 @@
    <div style="text-align:center">
             <font2>ANIMATIONS</font2>
    </div>
-   <div class="center">
-            <button id="OllieButt">
-
+   
+   <div class="grid-container">
+   
+   	<div class="grid-item"> 
+   		<button id="OllieButt">
 			<img src="IOWA_Deck.png" alt="IOWA" width="300" height="75">
+		</button>
+   	</div>
+   <div class="grid-item">            
+   		<button id="IowaButt">
+	
+		<img src="IOWA_Deck.png" alt="IOWA" width="300" height="75">
 
-	   		</button>
-    	</div>    
+		</button>
+    </div> 
+
+   </div>
+  
             
-   <div class="center">
-            <button id="IowaButt">
 
-			<img src="IOWA_Deck.png" alt="IOWA" width="300" height="75">
-
-	   		</button>
-		</div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         
             
