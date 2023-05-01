@@ -169,11 +169,22 @@
                  update(ref(db, "preset/"),{
                  int: 1
                 });
+		
+		  wait(1000);
+
+	         update(ref(db, "preset/"),{
+                 int: -1
+                });
 		}
                 
              function UpdateDataIowa(){   
                  update(ref(db, "preset/"),{
                  int: 2
+                });
+		 wait(1000);
+		    
+		 update(ref(db, "preset/"),{
+                 int: -1
                 });
 		}
                 
