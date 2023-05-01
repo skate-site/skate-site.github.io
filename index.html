@@ -48,23 +48,25 @@
 }
 
   body{
-    background: black;
+
+     background: black;
     background-repeat: no-repeat;
   }
   
   .p1 {
 	font-family: 'Montserrat', sans-serif;
 	font-family: 'Righteous', cursive;
-    	color: #ffffff;
+    color: #ffffff;
   }
   
   font2 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     color: #ffffff;
-    font-size: 30px;
+    font-size: 50px;
+  
   }
-	
+  
  button {
     position: absolute;
     top:50%;
@@ -77,43 +79,43 @@
       background-color: white;
       transition: 0.7s;
   }
-  
+
   .center {
-      margin: auto;
-      width: 60%;
-      padding: 10px;
-   }	
-	
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+	}
+        
   h1{
     text-align: center;
   }
+  
 </style>
 
 <body>
 	<h2 class="hr-lines"> Smart Skate </h2>
-	
-	<div class="center">
+    
+   <div class="center">
         <div id="updateboard">
             <font2>ANIMATIONS</font2>
-		<button>
-			<img src="IOWA_Deck.png" alt="IOWA" width="400" height="100">
-		</button>
+            
+            <button id="OllieButt">
 
+			<img src="IOWA_Deck.png" alt="IOWA" width="300" height="75">
 
+			</button>
+            
+            <button id="IowaButt">
 
-            <label for="trick_selection">Choose a Trick:</label>
-            <select id="trick_options">
-                <option value="1" selected>Trick1</option>
-                <option value="2">Trick2</option>
-                <option value="3">Trick3</option>
-            </select>
-            <br>
-            <br>
-            <button id="update">UPDATE</button>
+			<img src="IOWA_Deck.png" alt="IOWA" width="300" height="75">
+
+			</button>
+
         </div>
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          </div>
-	
+        
+        </div>
+            
         <script type="module">
             // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
@@ -144,30 +146,25 @@
 
             var testVal = document.querySelector("#testVal");
 
-            var updateBtm = document.querySelector("#update");
+            var updateOllie = document.querySelector("#OllieButt");
+            var updateIowa = document.querySelector("#IowaButt");
 
-            function UpdateData(){
-                var dropdown = document.getElementById("trick_options");
-                if(dropdown.value == 1){
-                    update(ref(db, "preset/"),{
-                    int: 1
-                });
+
+            function UpdateDataOllie(){
+                 update(ref(db, "preset/"),{
+                 int: 1
                 }
-                else if(dropdown.value == 2){
-                    update(ref(db, "preset/"),{
-                    int: 2
-                });
-                }
-                else{
-                    update(ref(db, "preset/"),{
-                    int: 3
-                });
+                
+             function UpdateDataIowa(){   
+                 update(ref(db, "preset/"),{
+                 int: 2
                 }
                 
             }
 
+            updateOllie.addEventListener('click', UpdateDataOllie);
+            updateIowa.addEventListener('click', UpdateDataIowa);
 
-            updateBtm.addEventListener('click', UpdateData);
           </script>
 
 </body>
