@@ -123,6 +123,14 @@
 
 		</button>
     </div> 
+   <div class="grid-item">            
+   		<button id="HawkButt">
+	
+		<img src="Herky_DECK.png" alt="IOWA" width="310" height="75">
+
+		</button>
+    </div>
+	   
 
    </div>
   
@@ -163,6 +171,8 @@
 
             var updateOllie = document.querySelector("#OllieButt");
             var updateIowa = document.querySelector("#IowaButt");
+	    var updateHawkeye = document.querySelector("#HawkButt");
+
 
 
             function UpdateDataOllie(){
@@ -187,10 +197,23 @@
                  int: -1
                 });
 		}
+		
+	    function UpdateDataHawkeye(){   
+                 update(ref(db, "preset/"),{
+                 int: 4
+                });
+		 wait(1000);
+		    
+		 update(ref(db, "preset/"),{
+                 int: -1
+                });
+		}
                 
 
             updateOllie.addEventListener('click', UpdateDataOllie);
             updateIowa.addEventListener('click', UpdateDataIowa);
+	    updateHawkeye.addEventListener('click', UpdateDataHawkeye);
+
 
           </script>
 
