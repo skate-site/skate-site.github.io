@@ -123,6 +123,13 @@
 
 		</button>
     </div> 
+    <div class="grid-item">            
+   		<button id="RainButt">
+	
+		<img src="Rainbow_DECK.png" alt="IOWA" width="310" height="75">
+
+		</button>
+    </div> 
    <div class="grid-item">            
    		<button id="HawkButt">
 	
@@ -171,7 +178,9 @@
 
             var updateOllie = document.querySelector("#OllieButt");
             var updateIowa = document.querySelector("#IowaButt");
+	    var updateRainbow = document.querySelector("#RainButt");
 	    var updateHawkeye = document.querySelector("#HawkButt");
+		
 
 
 
@@ -198,6 +207,17 @@
                 });
 		}
 		
+	    function UpdateDataRainbow(){   
+                 update(ref(db, "preset/"),{
+                 int: 3
+                });
+		 wait(1000);
+		    
+		 update(ref(db, "preset/"),{
+                 int: -1
+                });
+		}
+		
 	    function UpdateDataHawkeye(){   
                  update(ref(db, "preset/"),{
                  int: 4
@@ -212,7 +232,9 @@
 
             updateOllie.addEventListener('click', UpdateDataOllie);
             updateIowa.addEventListener('click', UpdateDataIowa);
+	    updateRainbow.addEventListener('click', UpdateDataRainbow);
 	    updateHawkeye.addEventListener('click', UpdateDataHawkeye);
+	
 
 
           </script>
